@@ -1,0 +1,46 @@
+.emons{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+
+    &Content{
+        width: 80%;
+        display: flex;
+        flex-direction: column;   
+        padding: 40px;
+        
+        &__infoBar{
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            border-bottom: 1px solid #D2D2D2;
+            justify-content: space-between;
+            align-items: center;
+            
+            & p{
+                font-weight: 600;
+                font-size: 16px;
+                margin: 0px;
+            }
+
+            &Profile{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                margin-bottom: 5px;
+                
+                &Photo {
+                    width: 35px;
+                    height: 35px;
+                    margin-left: 10px;
+                }
+
+                &Notifications {
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+        }
+    }
+}

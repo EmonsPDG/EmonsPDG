@@ -1,0 +1,400 @@
+@import url("https://fonts.googleapis.com/css2?family=Itim&family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap");
+html {
+  min-height: 100%;
+  font-family: 'Nunito', sans-serif;
+  color: #424242;
+}
+
+body {
+  margin: 0px;
+  min-height: 100vh;
+  height: 100vh;
+  background-color: #FFFFFF;
+}
+
+.emons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+
+.emonsContent {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 40px;
+}
+
+.emonsContent__infoBar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  border-bottom: 1px solid #D2D2D2;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.emonsContent__infoBar p {
+  font-weight: 600;
+  font-size: 16px;
+  margin: 0px;
+}
+
+.emonsContent__infoBarProfile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 5px;
+}
+
+.emonsContent__infoBarProfilePhoto {
+  width: 35px;
+  height: 35px;
+  margin-left: 10px;
+}
+
+.emonsContent__infoBarProfileNotifications {
+  width: 30px;
+  height: 30px;
+}
+
+.nav {
+  width: 15%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #5048AF;
+  border-top-right-radius: 20px;
+  border-end-end-radius: 20px;
+}
+
+.navLogo {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px solid #FFFFFF;
+}
+
+.navLogo p {
+  font-family: 'Itim', sans-serif;
+  font-weight: 300;
+  font-size: 25px;
+  color: #FFFFFF;
+  margin: 15px 0px;
+}
+
+.navList {
+  width: 80%;
+  margin-top: 10px;
+}
+
+.navList__admin {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 15px 0px;
+}
+
+.navList__admin p {
+  color: #A4A4A4;
+  font-size: 10px;
+  font-weight: 500;
+  margin: 0px;
+}
+
+.navList__adminOptions {
+  margin: 0px;
+  margin-top: 5px;
+}
+
+.navList__adminOptions ul {
+  list-style: none;
+  padding-left: 15px;
+  margin: 5px 0px;
+}
+
+.navList__adminOptions ul a {
+  text-decoration: none;
+  color: #FFFFFF;
+  font-weight: 200;
+  font-size: 14px;
+}
+
+.navList__adminOptions ul a li {
+  margin-top: 10px;
+}
+
+.navList__adminOptions--selected li {
+  font-weight: 700;
+}
+
+.navList__support {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  margin: 15px 0px;
+}
+
+.navList__support p {
+  color: #A4A4A4;
+  font-size: 10px;
+  font-weight: 500;
+  margin: 0px;
+}
+
+.navList__supportOptions {
+  margin: 0px;
+  margin-top: 5px;
+}
+
+.navList__supportOptions ul {
+  list-style: none;
+  padding-left: 15px;
+  margin: 5px 0px;
+}
+
+.navList__supportOptions ul a {
+  text-decoration: none;
+  color: #FFFFFF;
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.navList__supportOptions ul a li {
+  margin-top: 10px;
+}
+
+.emonsContent__home {
+  width: 100%;
+  margin: 20px 0px;
+}
+
+.emonsContent__homeWelcome {
+  background-color: #D0C6F0;
+  border-radius: 15px;
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 40px;
+}
+
+.emonsContent__homeWelcomeInfo h3 {
+  font-size: 22px;
+  margin: 0px;
+}
+
+.emonsContent__homeWelcomeInfo p {
+  font-size: 14px;
+  margin: 0px;
+  margin-top: 10px;
+}
+
+.emonsContent__homeSatisfaction {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 30px 0px;
+}
+
+.emonsContent__homeSatisfaction p {
+  margin: 0px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.emonsContent__homeSatisfactionBlocks {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.emonsContent__homeSatisfactionBlock {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 250px;
+  border-radius: 15px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px;
+}
+
+.emonsContent__homeSatisfactionBlock img {
+  width: 50px;
+  height: 50px;
+}
+
+.emonsContent__homeSatisfactionBlockInfo {
+  color: #FFFFFF;
+  margin-left: 20px;
+}
+
+.emonsContent__homeSatisfactionBlockInfoScore {
+  font-weight: 600 !important;
+  font-size: 18px !important;
+}
+
+.emonsContent__homeSatisfactionBlockInfo p {
+  margin: 0px;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.emonsContent__homeSatisfactionBlock--excelent {
+  background-color: #4A8AAC;
+}
+
+.emonsContent__homeSatisfactionBlock--good {
+  background-color: #75CFAA;
+}
+
+.emonsContent__homeSatisfactionBlock--regular {
+  background-color: #8AAFFF;
+}
+
+.emonsContent__homeSatisfactionBlock--bad {
+  background-color: #F5AAAA;
+}
+
+.emonsContent__homeGraphs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 40px;
+}
+
+.emonsContent__homeGraphsSatisfaction {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 80%;
+}
+
+.emonsContent__homeGraphsSatisfaction p {
+  margin: 0px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.emonsContent__homeGraphsBalance {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 20%;
+}
+
+.emonsContent__homeGraphsBalance p {
+  margin: 0px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.emonsContent__homeGraphsBalanceData img {
+  margin-top: 25px;
+}
+
+.btn {
+  width: 200px;
+  height: 40px;
+  background-color: #5048AF;
+  color: #FFFFFF;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+}
+/*# sourceMappingURL=index.css.map */

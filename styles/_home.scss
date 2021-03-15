@@ -1,0 +1,141 @@
+.emons{
+    &Content{
+        &__home{
+            width: 100%;
+            margin: 20px 0px;
+
+            &Welcome{
+                background-color: #D0C6F0;
+                border-radius: 15px;
+                padding: 20px;
+                display: flex;
+                flex-direction: row;
+                align-items: flex-end;
+                justify-content: space-between;
+                margin-top: 40px;
+
+                &Info{
+                    & h3 {
+                        font-size: 22px;
+                        margin: 0px;
+                    }
+
+                    & p{
+                        font-size: 14px;
+                        margin: 0px;
+                        margin-top: 10px;
+                    }
+                }
+            }
+
+            &Satisfaction{
+                display: flex;
+                flex-direction: column;
+                margin: 30px 0px;
+
+                & p {
+                    margin: 0px;
+                    margin-bottom: 10px;
+                    font-weight: 600;
+                }
+
+                &Blocks{
+                    display: flex;
+                    flex-direction: row;
+                    width: 100%;
+                    justify-content: space-between;
+                }
+
+                &Block{
+                    display: flex;
+                    flex-direction: row;
+                    width: 250px;
+                    border-radius: 15px;
+                    align-items: center;
+                    padding: 10px;
+
+                    & img {
+                        width: 50px;
+                        height: 50px;
+                    }
+                    
+                    &Info{
+                        color: #FFFFFF;
+                        margin-left: 20px;
+
+                        &Score{
+                            font-weight: 600 !important;
+                            font-size: 18px !important;
+                        }
+                        
+                        & p {
+                            margin: 0px;
+                            font-size: 16px;
+                            font-weight: 300;
+                        }
+
+                        
+                    }
+
+                    &--excelent{
+                        background-color: #4A8AAC;
+                    }
+
+                    &--good{
+                        background-color: #75CFAA;
+                    }
+
+                    &--regular{
+                        background-color: #8AAFFF;
+                    }
+
+                    &--bad{
+                        background-color: #F5AAAA;
+                    }
+                }
+            }
+
+            &Graphs{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                margin-top: 40px;
+                
+                &Satisfaction{
+                    display: flex;
+                    flex-direction: column;
+                    width: 80%;
+
+                    & p {
+                        margin: 0px;
+                        margin-bottom: 10px;
+                        font-weight: 600; 
+                    }
+                    
+                    &Data{
+
+                    }
+                }
+
+                &Balance{
+                    display: flex;
+                    flex-direction: column;
+                    width: 20%;
+
+                    & p {
+                        margin: 0px;
+                        margin-bottom: 10px;
+                        font-weight: 600; 
+                    }
+
+                    &Data{
+
+                        img {
+                            margin-top: 25px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

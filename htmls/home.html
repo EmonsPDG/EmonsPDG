@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emons</title>
     <link rel="stylesheet" href="/styles/index.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 </head>
 <body>
     <div class="emons">
@@ -92,9 +93,10 @@
                 <div class="emonsContent__homeGraphs">
                     <div class="emonsContent__homeGraphsSatisfaction">
                         <p>Satisfacción grupal por semana</p>
-                        <div class="emonsContent__homeGraphsSatisfactionData">
+                        <!-- <div class="emonsContent__homeGraphsSatisfactionData">
                             <img src="/resources/graphs.png" alt="">
-                        </div>
+                        </div> -->
+                        <canvas class="emonsContent__homeGraphsSatisfactionData" id="satisfactionGraph"></canvas>
                     </div>
                     <div class="emonsContent__homeGraphsBalance">
                         <p>Balance de respuestas</p>
@@ -106,7 +108,7 @@
             </div>
         </div>
     </div>
-    
-    
+
+    <script src="/scripts/home.js"></script>
 </body>
 </html>

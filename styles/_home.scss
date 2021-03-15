@@ -104,7 +104,7 @@
                 &Satisfaction{
                     display: flex;
                     flex-direction: column;
-                    width: 80%;
+                    width: 70%;
 
                     & p {
                         margin: 0px;
@@ -113,7 +113,8 @@
                     }
                     
                     &Data{
-
+                        width: 100% !important;
+                        height: 300px !important;
                     }
                 }
 

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emons</title>
     <link rel="stylesheet" href="/styles/index.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 </head>
 <body>
     <div class="emons">
@@ -44,9 +45,15 @@
                     <img class="emonsContent__infoBarProfilePhoto" src="/resources/photoProfile.png" alt="">
                 </div>
             </div>
+            <div class="emonsContent__groupGraphs">
+                <div class="emonsContent__groupGraphsSatisfaction">
+                    <p>Satisfacción grupal por semana</p>
+                    <canvas class="emonsContent__groupGraphsSatisfactionData" id="satisfactionGraphGroup"></canvas>
+                </div>
         </div>
     </div>
     
-    
+    <script src="/scripts/followGroup.js"></script>
+
 </body>
 </html>

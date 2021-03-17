@@ -4,9 +4,8 @@
     flex-direction: column;
     align-items: center;
     background-color: #5048AF;
-    border-top-right-radius: 20px;
-    border-end-end-radius: 20px;
-
+    box-shadow: 4px 0px 4px rgba(0, 0, 0, 0.1);
+    
     &Logo{
         width: 80%;
         display: flex;

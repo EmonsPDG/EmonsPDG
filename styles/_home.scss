@@ -5,14 +5,16 @@
             margin: 20px 0px;
 
             &Welcome{
-                background-color: #D0C6F0;
-                border-radius: 15px;
-                padding: 20px;
+                background-color: $color-violet-soft;
+                border-radius: 10px;
+                padding: 25px;
                 display: flex;
                 flex-direction: row;
                 align-items: flex-end;
                 justify-content: space-between;
-                margin-top: 40px;
+                margin-top: 20px;
+                color: $color-white;
+                box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 
                 &Info{
                     & h3 {
@@ -39,58 +41,57 @@
                     font-weight: 600;
                 }
 
-                &Blocks{
+                &Graphs{
                     display: flex;
                     flex-direction: row;
-                    width: 100%;
                     justify-content: space-between;
-                }
+                    height: 230px;
 
-                &Block{
-                    display: flex;
-                    flex-direction: row;
-                    width: 250px;
-                    border-radius: 15px;
-                    align-items: center;
-                    padding: 10px;
+                    &Data{
+                        width: 80%;
+                        // box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+                        // border-radius: 10px;
+                        // background: #BACDF7;
+                        // padding: 10px;
 
-                    & img {
-                        width: 50px;
-                        height: 50px;
+                        &Canvas{
+                            
+                        }
                     }
                     
-                    &Info{
-                        color: #FFFFFF;
-                        margin-left: 20px;
+                    &Average{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        width: 15%;
+                        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+                        border-radius: 10px;
+                        padding: 10px;
 
-                        &Score{
-                            font-weight: 600 !important;
-                            font-size: 18px !important;
+                        & img {
+                            width: 50px;
                         }
-                        
+
                         & p {
-                            margin: 0px;
-                            font-size: 16px;
-                            font-weight: 300;
+                            text-align: center;
+                            margin-top: 10px;
+                            font-size: 15px;
                         }
 
-                        
-                    }
+                        & h3{
+                            margin: 0px;
+                            margin-top: 10px;
+                            font-weight: 600;
+                        }
 
-                    &--excelent{
-                        background-color: #4A8AAC;
-                    }
-
-                    &--good{
-                        background-color: #75CFAA;
-                    }
-
-                    &--regular{
-                        background-color: #8AAFFF;
-                    }
-
-                    &--bad{
-                        background-color: #F5AAAA;
+                        & h2{
+                            margin: 0px;
+                            margin-top: 10px;
+                            font-weight: 700;
+                            font-size: 35px;
+                            color: $color-darkViolet;
+                        }
                     }
                 }
             }
@@ -133,6 +134,53 @@
 
                         img {
                             margin-top: 25px;
+                        }
+                    }
+                }
+            }
+
+            &News{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+
+                &Notifications{
+                    display: flex;
+                    flex-direction: column;
+                    width: 80%;
+
+                    &Title{
+                        margin: 0px;
+                        margin-bottom: 10px;
+                        font-weight: 600;
+                    }
+                   
+                    &Block{
+                        display: flex;
+                        flex-direction: row;
+                        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+                        border-radius: 10px;
+                        align-items: center;
+                        padding: 15px;
+                        margin-bottom: 10px;
+
+                        &Text{
+                            margin: 0px 15px;
+                        }
+
+                        & img {
+                            width: 50px;
+                        }
+
+                        & h3 {
+                            font-size: 16px;
+                            margin: 0px;
+                        }
+
+                        & p {
+                            margin: 0px;
+                            margin-top: 5px;
+                            font-size: 14px;
                         }
                     }
                 }

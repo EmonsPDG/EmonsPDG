@@ -1,9 +1,14 @@
 .btn{
     width: 200px;
     height: 40px;
-    background-color: #5048AF;
+    background-color: $color-darkViolet;
     color: #FFFFFF;
-    border-radius: 10px;
+    border-radius: 5px;
     cursor: pointer;
     border: none;
+
+    &--small{
+        width: 150px;
+        font-size: 12px;
+    }
 }

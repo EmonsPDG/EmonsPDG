@@ -1,4 +1,5 @@
 var dataAnswers = [];
+let averageGroupSatisfaction = document.querySelector('.emonsContent__homeSatisfactionGraphsAverageResult');
 
 restaFechas = function(f1,f2) {
     var aFecha1 = f1.split('/');
@@ -10,25 +11,23 @@ restaFechas = function(f1,f2) {
     return dias;
 }
 
+let answersWeek = [];
+let resultTotalWeek = [];
+let averageSatisfaction = [];
+let startSemester = '';
+
+for (let i = 0; i < 16; i++) {
+    answersWeek.push(new Array(0));
+}
+
 db.collection("answers").get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
         dataAnswers.push(doc.data());
     });
 
-    let resultTotalWeek1 = 0;
-    let resultTotalWeek2 = 0;
-    let resultTotalWeek3 = 0;
-    let resultTotalWeek4 = 0;
-    let resultTotalWeek5 = 0;
-    let resultTotalWeek6 = 0;
-    let resultTotalWeek7 = 0;
-    let resultTotalWeek8 = 0;
-    let resultTotalWeek9 = 0;
-    let resultTotalWeek10 = 0;
-
     //Forma de calcular las semanas, trayendo la fecha de inicio de semestre con la diferencia de la fecha de respuesta
-    let startSemester = '';
     db.collection('semester').doc('2021-1').get().then((doc) => {
+
         if (doc.exists) {
             startSemester = doc.data().start;
         } else {
@@ -37,13 +36,7 @@ db.collection("answers").get().then((querySnapshot) => {
 
         //Forma de traer los resultados de cada respuesta
         let sumTotalResult = 0;
-
-        //Semana de respuesta comparada desde el dia de respuesta a la pregunta con el inicio de semestre
         let weekAnswer = '';
-
-        //Arreglos de respuesta por semana para saber el length de respuestas en esa semana
-        let answersWeek1 = [];
-        let answersWeek7 = [];
 
         dataAnswers.forEach((elem) => {
 
@@ -57,34 +50,36 @@ db.collection("answers").get().then((querySnapshot) => {
             console.log('Semana de respuesta: '+ weekAnswer);
 
             //Resultados por semana
-            let resultsWeek1 = 0;
-            let resultsWeek7 = 0;
+            let resultsWeek = [];
+            let sumWeek = 0;
 
-            //Resultados según la semana
-            switch (weekAnswer) {
-                case 7:
-                    answersWeek7.push(parseInt(elem.result));
-                    answersWeek7.forEach( (week7) =>{
-                        resultsWeek7 += week7;
-                        sumTotalResult = resultsWeek7/answersWeek7.length;
-                        resultTotalWeek7 = sumTotalResult;
-                        console.log('Week 7: ' + resultTotalWeek7);
-                    })
-                    break;
-
-                case 1:
-                    answersWeek1.push(parseInt(elem.result));
-                    answersWeek1.forEach((week1) => {
-                        resultsWeek1 += week1;
-                        sumTotalResult = resultsWeek1/answersWeek1.length;
-                        resultTotalWeek1 = sumTotalResult;
-                        console.log('Week 1: ' + resultTotalWeek1);
-                    });
-                    break;
+            console.log(answersWeek[0]);
+            answersWeek[weekAnswer].push(parseInt(elem.result));
+            answersWeek[weekAnswer].forEach((week) => {
+                resultsWeek.push(week);
+            });
+            resultsWeek.forEach((result)=>{
+                sumWeek += result;
+            });
+            sumTotalResult = sumWeek/resultsWeek.length;
+            resultTotalWeek[0] = 0;
+            resultTotalWeek[weekAnswer] = sumTotalResult;
+            console.log('Week ' + weekAnswer +': ' + resultTotalWeek[weekAnswer]);
             
-                default:
-                    break;
-            }
+            console.log(...resultTotalWeek);
+
+
+            //Calcula la satisfacción general sumando todos los datos de todas las semanas y sacando el promedio,
+            //calculando el promedio de la satisfacción general del curso
+            let sumSatisfaction = 0;
+            averageSatisfaction.push(parseInt(elem.result));
+
+            averageSatisfaction.forEach((satisfactionResult) => {
+                sumSatisfaction += satisfactionResult;
+            });
+            let resultFinalSatisfaction = sumSatisfaction / averageSatisfaction.length; 
+            averageGroupSatisfaction.innerHTML = resultFinalSatisfaction;
+
 
             //Grafica de satisfacción general
             var ctx = document.getElementById('satisfactionGraph').getContext('2d');
@@ -94,11 +89,11 @@ db.collection("answers").get().then((querySnapshot) => {
                 
                 // The data for our dataset
                 data: {
-                    labels: ['Sem 1', 'Sem 2', 'Sem 3', 'Sem 4', 'Sem 5', 'Sem 6', 'Sem 7', 'Sem 8', 'Sem 9', 'Sem 10', 'Sem 11', 'Sem 12', 'Sem 13', 'Sem 14', 'Sem 15','Sem 16'],
+                    labels: ['Sem0', 'Sem 1', 'Sem 2', 'Sem 3', 'Sem 4', 'Sem 5', 'Sem 6', 'Sem 7', 'Sem 8', 'Sem 9', 'Sem 10', 'Sem 11', 'Sem 12', 'Sem 13', 'Sem 14','Sem 15','Sem 16'],
                     datasets: [{
-                        label: 'My First dataset',
+                        label: 'Media estudiante',
                         borderColor: 'rgb(255, 99, 132)',
-                        data: [resultTotalWeek1, resultTotalWeek2, resultTotalWeek3, resultTotalWeek4, resultTotalWeek5, resultTotalWeek6, resultTotalWeek7, 5, 1, 5, 5, 2,5, 2, 3,5],
+                        data: [...resultTotalWeek],
                         backgroundColor: 'transparent',
                         fill: false,
                         pointStyle: 'rectRounded',

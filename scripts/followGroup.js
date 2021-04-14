@@ -21,11 +21,11 @@ var chart = new Chart(ctx, {
         legend: { display: false },
         scales: {
             yAxes: [{
-              ticks: {
-                  beginAtZero: true
-              }
+                ticks: {
+                    beginAtZero: true
+                }
             }]
-  }
+        }
     }
 });
 

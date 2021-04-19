@@ -1,5 +1,6 @@
 var dataAnswers = [];
 let averageGroupSatisfaction = document.querySelector('.emonsContent__homeSatisfactionGraphsAverageResult');
+let containerGraph = document.querySelector('.emonsContent__homeSatisfactionGraphsData');
 
 restaFechas = function(f1,f2) {
     var aFecha1 = f1.split('/');
@@ -20,6 +21,42 @@ for (let i = 0; i < 16; i++) {
     answersWeek.push(new Array(0));
 }
 
+const graph = (datasets) =>{
+    if(document.getElementById('satisfactionGraph')){
+        containerGraph.removeChild(document.getElementById('satisfactionGraph'));
+    };
+    var graphView = document.createElement('canvas');
+    graphView.classList.add('emonsContent__homeSatisfactionGraphsData');
+    graphView.setAttribute('id','satisfactionGraph');
+    containerGraph.appendChild(graphView);
+
+     //Grafica de satisfacción general
+     var ctx = document.getElementById('satisfactionGraph').getContext('2d');
+     var chart = new Chart(ctx, {
+         // The type of chart we want to create
+         type: 'line',
+         
+         // The data for our dataset
+         data: {
+             labels: ['Sem 0', 'Sem 1', 'Sem 2', 'Sem 3', 'Sem 4', 'Sem 5', 'Sem 6', 'Sem 7', 'Sem 8', 'Sem 9', 'Sem 10', 'Sem 11', 'Sem 12', 'Sem 13', 'Sem 14','Sem 15','Sem 16'],
+             datasets: [{
+                 label: 'Media estudiante',
+                 borderColor: 'rgb(255, 99, 132)',
+                 data: [...datasets],
+                 backgroundColor: 'transparent',
+                 fill: false,
+                 pointStyle: 'rectRounded',
+                 lineTension: 0,
+             }]
+         },
+
+         // Configuration options go here
+         options: {
+             maintainAspectRatio: false,
+             legend: { display: false },
+         }
+     }); 
+}
 db.collection("answers").get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
         dataAnswers.push(doc.data());
@@ -53,7 +90,6 @@ db.collection("answers").get().then((querySnapshot) => {
             let resultsWeek = [];
             let sumWeek = 0;
 
-            console.log(answersWeek[0]);
             answersWeek[weekAnswer].push(parseInt(elem.result));
             answersWeek[weekAnswer].forEach((week) => {
                 resultsWeek.push(week);
@@ -64,10 +100,11 @@ db.collection("answers").get().then((querySnapshot) => {
             sumTotalResult = sumWeek/resultsWeek.length;
             resultTotalWeek[0] = 0;
             resultTotalWeek[weekAnswer] = sumTotalResult;
-            console.log('Week ' + weekAnswer +': ' + resultTotalWeek[weekAnswer]);
+            //console.log('Week ' + weekAnswer +': ' + resultTotalWeek[weekAnswer]);
             
-            console.log(...resultTotalWeek);
+            //console.log(...resultTotalWeek);
 
+            graph(resultTotalWeek);
 
             //Calcula la satisfacción general sumando todos los datos de todas las semanas y sacando el promedio,
             //calculando el promedio de la satisfacción general del curso
@@ -77,36 +114,8 @@ db.collection("answers").get().then((querySnapshot) => {
             averageSatisfaction.forEach((satisfactionResult) => {
                 sumSatisfaction += satisfactionResult;
             });
-            let resultFinalSatisfaction = sumSatisfaction / averageSatisfaction.length; 
+            let resultFinalSatisfaction = parseFloat(sumSatisfaction / averageSatisfaction.length).toFixed(1); 
             averageGroupSatisfaction.innerHTML = resultFinalSatisfaction;
-
-
-            //Grafica de satisfacción general
-            var ctx = document.getElementById('satisfactionGraph').getContext('2d');
-            var chart = new Chart(ctx, {
-                // The type of chart we want to create
-                type: 'line',
-                
-                // The data for our dataset
-                data: {
-                    labels: ['Sem0', 'Sem 1', 'Sem 2', 'Sem 3', 'Sem 4', 'Sem 5', 'Sem 6', 'Sem 7', 'Sem 8', 'Sem 9', 'Sem 10', 'Sem 11', 'Sem 12', 'Sem 13', 'Sem 14','Sem 15','Sem 16'],
-                    datasets: [{
-                        label: 'Media estudiante',
-                        borderColor: 'rgb(255, 99, 132)',
-                        data: [...resultTotalWeek],
-                        backgroundColor: 'transparent',
-                        fill: false,
-                        pointStyle: 'rectRounded',
-                        lineTension: 0,
-                    }]
-                },
-
-                // Configuration options go here
-                options: {
-                    maintainAspectRatio: false,
-                    legend: { display: false },
-                }
-            }); 
         });
 
     }).catch((error) => {

@@ -5,14 +5,35 @@
             height: 100%;
 
             &Satisfaction{
-                width: 70%;
+                width: 100%;
                 height: 100%;
 
+                &Options{
+                    margin: 10px 0px;
+                }
+
                 &Data{
+                    margin-top: 10px;
                     width: 100% !important;
-                    height: 600px !important;
+                    height: 520px !important;
+                }
+
+                &Checkboxes{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
                 }
             }
         }
+    }
+}
+
+
+.inputRadio{
+    display: flex;
+    flex-direction: row;
+
+    label{
+        margin-left: 8px;
     }
 }

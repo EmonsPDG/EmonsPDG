@@ -483,12 +483,44 @@ body {
 }
 
 .emonsContent__groupGraphsSatisfaction {
-  width: 70%;
+  width: 100%;
   height: 100%;
 }
 
+.emonsContent__groupGraphsSatisfactionOptions {
+  margin: 10px 0px;
+}
+
 .emonsContent__groupGraphsSatisfactionData {
+  margin-top: 10px;
   width: 100% !important;
-  height: 600px !important;
+  height: 520px !important;
+}
+
+.emonsContent__groupGraphsSatisfactionCheckboxes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.inputRadio {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.inputRadio label {
+  margin-left: 8px;
 }
 /*# sourceMappingURL=index.css.map */

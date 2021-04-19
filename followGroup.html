@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emons</title>
+    <link rel="stylesheet" href="../styles/index.css">
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slim-select/1.27.0/slimselect.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/slim-select/1.27.0/slimselect.min.css" rel="stylesheet"></link>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/iCheck/1.0.3/icheck.min.js" integrity="sha512-RGDpUuNPNGV62jwbX1n/jNVUuK/z/GRbasvukyOim4R8gUEXSAjB4o0gBplhpO8Mv9rr7HNtGzV508Q1LBGsfA==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/iCheck/1.0.3/skins/all.min.css" integrity="sha512-wcKDxok85zB8F9HzgUwzzzPKJhHG7qMfC7bSKrZcFTC2wZXVhmgKNXYuid02cHVnFSC8KOJCXQ8M83UVA7v5Bw==" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+</head>
+<body>
+    <div class="emons">
+        <nav class="nav">
+            <div class="navLogo">
+                <p>EMONS</p >
+            </div>
+            <div class="navList">
+                <div class="navList__admin">
+                    <p>ADMINISTRAR</p>
+                    <div class="navList__adminOptions">
+                        <ul>
+                            <a href="index.html"><li>Inicio</li></a>
+                            <a class="navList__adminOptions navList__adminOptions--selected" href="followGroup.html"><li>Seguimiento grupal</li></a>
+                            <a href="followIndividual.html"><li>Seguimiento individual</li></a>
+                            <a href=""><li>Retroalimentaciones</li></a>
+                        </ul>
+                    </div>
+                </div>
+                <div class="navList__support">
+                    <p>SOPORTE</p>
+                    <div class="navList__supportOptions">
+                        <ul>
+                            <a href=""><li>Preguntas frecuentes</li></a>
+                            <a href=""><li>Comunicarme con Intu</li></a>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="emonsContent">
+            <div class="emonsContent__infoBar">
+                <p>Proyecto de grado II</p>
+                <div class="emonsContent__infoBarProfile">
+                    <img class="emonsContent__infoBarProfileNotifications" src="../resources/notifications.svg" alt="">
+                    <img class="emonsContent__infoBarProfilePhoto" src="../resources/photoProfile.png" alt="">
+                </div>
+            </div>
+            <div class="emonsContent__groupGraphs">
+                <div class="emonsContent__groupGraphsSatisfaction">
+                    <p>Selecciona las variables que deseas mostrar y comparar en la grafica:</p>
+                    <div class="emonsContent__groupGraphsSatisfactionCheckboxes">
+                        <div class="icheckbox inputRadio inputRadioEmotional">
+                            <input type="checkbox" name="iCheck" id="emotional">
+                            <label for="emotional">Emocional</label>
+                        </div>
+                        <div class="icheckbox inputRadio inputRadioSatisfation">
+                            <input type="checkbox" name="iCheck" id="satisfation">
+                            <label for="satisfation">Satisfacción grupal</label>
+                        </div>
+                        <div class="icheckbox inputRadio inputRadioActivities">
+                            <input type="checkbox" name="iCheck" id="activities">
+                            <label for="activities">Actividades en clase</label>
+                        </div>
+                        <div class="icheckbox inputRadio inputRadioJobs">
+                            <input type="checkbox" name="iCheck" id="jobs">
+                            <label for="jobs">Trabajos y entregas</label>
+                        </div>
+                        <div class="icheckbox inputRadio inputRadioMetodolody">
+                            <input type="checkbox" name="iCheck" id="metodology">
+                            <label for="metodology">Metodologia</label>
+                        </div>
+                    </div>
+                    <!-- <select class="emonsContent__groupGraphsSatisfactionOptions" name="category" id="category" multiple>
+                        <option value="value 1">Satisfacción grupal</option>
+                        <option value="value 2">Actividades en clase</option>
+                        <option value="value 3">Trabajos y entregas</option>
+                        <option value="value 4">Metodologia</option>
+                        <option value="value 5">Emocional</option>
+                    </select> -->
+                    <!-- <canvas class="emonsContent__groupGraphsSatisfactionData" id="satisfactionGraphGroup"></canvas> -->
+                </div>
+        </div>
+    </div>
+    
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-analytics.js"></script>
+    <script src="../scripts/firebase.js"></script>
+    <script src="../scripts/followGroup.js"></script>
+    
+
+</body>
+</html>

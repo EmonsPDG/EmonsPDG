@@ -23,11 +23,18 @@
                     flex-direction: row;
                     justify-content: space-between;
                 }
+
+                &CardAverages{
+                    margin: 20px 0px;
+                    display: flex;
+                    flex-direction: row;
+                    width: 100%;
+                    justify-content: space-between;
+                }
             }
         }
     }
 }
-
 
 .inputRadio{
     display: flex;

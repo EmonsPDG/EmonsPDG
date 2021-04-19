@@ -2,7 +2,8 @@
 //     select: '#category'
 // });
 let datasets = [];
-let containerGraph = document.querySelector('.emonsContent__groupGraphsSatisfaction');
+let containerGraph = document.querySelector('.emonsContent__groupGraphsSatisfactionContainer');
+
 
 restaFechas = function(f1,f2) {
     var aFecha1 = f1.split('/');
@@ -143,6 +144,7 @@ $ ('.inputRadioEmotional').on('ifToggled', function (event) {
     let resultTotalWeek = [];
     let dataAnswers = [];
     let answersWeek = [];
+
     for (let i = 0; i < 16; i++) {
         answersWeek.push(new Array(0));
     }

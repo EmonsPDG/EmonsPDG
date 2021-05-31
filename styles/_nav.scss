@@ -58,6 +58,13 @@
 
                         li {
                             margin-top: 10px;
+
+                            &:hover{
+                                font-weight: 600;
+                                font-size: 14px;
+                                margin-left: 10px;
+                                transition: margin-left 0.5s;
+                            }
                         }
                     }
                 }
@@ -65,7 +72,10 @@
                 &--selected{
                     
                     & li {
-                        font-weight: 700;
+                        font-weight: 600;
+                        font-size: 14px;
+                        margin-left: 10px;
+                        transition: margin-left 0.5s;
                     }
                 }
             }
@@ -101,6 +111,13 @@
 
                         li {
                             margin-top: 10px;
+                            
+                            &:hover{
+                                font-weight: 600;
+                                font-size: 14px;
+                                margin-left: 10px;
+                                transition: margin-left 0.5s;
+                            }
                         }
                     }
                 }

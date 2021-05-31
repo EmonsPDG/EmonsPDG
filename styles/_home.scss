@@ -53,10 +53,6 @@
                         // border-radius: 10px;
                         // background: #BACDF7;
                         // padding: 10px;
-
-                        &Canvas{
-                            
-                        }
                     }
                     
                     &Average{
@@ -68,6 +64,12 @@
                         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
                         border-radius: 10px;
                         padding: 10px;
+
+                        &:hover{
+                            cursor: pointer;
+                            background-color: #BACDF7;
+                            transition: background-color 0.5s;
+                        }
 
                         & img {
                             width: 50px;

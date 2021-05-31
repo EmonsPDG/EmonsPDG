@@ -131,21 +131,23 @@ const graph = (category,datasets) =>{
             scales: {
                 yAxes: [{
                     ticks: {
-                        beginAtZero: true
+                        min: 1,
+                        max: 5,
                     }
-                }]
+                }],
             },
-            tooltip: true
+            tooltip: true,
         }
     }); 
 }
+
 
 $ ('.inputRadioEmotional').on('ifToggled', function (event) { 
     let resultTotalWeek = [];
     let dataAnswers = [];
     let answersWeek = [];
 
-    for (let i = 0; i < 16; i++) {
+    for (let i = 0; i < 17; i++) {
         answersWeek.push(new Array(0));
     }
 
@@ -173,7 +175,7 @@ $ ('.inputRadioEmotional').on('ifToggled', function (event) {
                     if(indexWeek <= 0) {
                         indexWeek = 1;
                     }
-                    //console.log('Semana de respuesta: '+ indexWeek);
+                    console.log('Semana de respuesta: '+ indexWeek);
         
                     /*Arreglo de resultados por semana */
                     let resultsWeek = [];
@@ -204,7 +206,7 @@ $ ('.inputRadioSatisfation').on('ifToggled', function (event) {
     let resultTotalWeek = [];    
     let dataAnswers = [];
     let answersWeek = [];
-    for (let i = 0; i < 16; i++) {
+    for (let i = 0; i < 17; i++) {
         answersWeek.push(new Array(0));
     }
 
@@ -261,7 +263,7 @@ $ ('.inputRadioActivities').on('ifToggled', function (event) {
     let resultTotalWeek = [];    
     let dataAnswers = [];
     let answersWeek = [];
-    for (let i = 0; i < 16; i++) {
+    for (let i = 0; i < 17; i++) {
         answersWeek.push(new Array(0));
     }
 
@@ -318,7 +320,7 @@ $ ('.inputRadioJobs').on('ifToggled', function (event) {
     let resultTotalWeek = [];    
     let dataAnswers = [];
     let answersWeek = [];
-    for (let i = 0; i < 16; i++) {
+    for (let i = 0; i < 17; i++) {
         answersWeek.push(new Array(0));
     }
 
@@ -375,7 +377,7 @@ $ ('.inputRadioMetodolody').on('ifToggled', function (event) {
     let resultTotalWeek = [];    
     let dataAnswers = [];
     let answersWeek = [];
-    for (let i = 0; i < 16; i++) {
+    for (let i = 0; i < 17; i++) {
         answersWeek.push(new Array(0));
     }
 

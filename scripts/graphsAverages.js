@@ -1,4 +1,4 @@
-const cardAverage = (title,text,result) => {
+const cardAverage = (id,title,text,result) => {
     let groupGraphs = document.querySelector('.emonsContent__groupGraphsSatisfaction');
     let containerCardAverages = document.querySelector('.emonsContent__groupGraphsSatisfactionCardAverages');
 
@@ -15,7 +15,8 @@ const cardAverage = (title,text,result) => {
     cardAverageH2.innerHTML = result;
 
     cardAverage.classList.add('emonsContent__homeSatisfactionGraphsAverage');
-    
+    cardAverage.setAttribute("id",id);
+
     // cardAverage.appendChild(cardAverageImg);
     cardAverage.appendChild(cardAverageH3);
     cardAverage.appendChild(cardAverageP);
@@ -44,7 +45,17 @@ db.collection("answers").where("category", "==", "Emotional").get().then((queryS
         resultFinalSatisfaction = parseFloat(sumSatisfaction / averageSatisfaction.length).toFixed(1); 
     });
     let text = 'Tus estudiantes se encuentran emocionalmente en un promedio de:';
-    cardAverage('Emocional',text, resultFinalSatisfaction);
+    cardAverage("EmotionalGraph",'Emocional',text, resultFinalSatisfaction);
+
+    
+    const graphEmotional = document.getElementById('EmotionalGraph');
+    const handleClick = (event) =>{
+        location.href="averageDetail.html";
+        localStorage.clear();
+        localStorage.setItem("variable","Emotional");
+        localStorage.setItem("variableText","Emocional");
+    }
+    graphEmotional.addEventListener("click",handleClick);
 });
 
 db.collection("answers").where("category", "==", "Satisfaction").get().then((querySnapshot) => {
@@ -65,7 +76,15 @@ db.collection("answers").where("category", "==", "Satisfaction").get().then((que
         resultFinalSatisfaction = parseFloat(sumSatisfaction / averageSatisfaction.length).toFixed(1); 
     });
     let text = 'El promedio de satisfacción con el curso es de:';
-    cardAverage('Satisfacción',text, resultFinalSatisfaction);
+    cardAverage("SatisfactionGraph",'Satisfacción',text, resultFinalSatisfaction);
+    const graphSatisfaction = document.getElementById('SatisfactionGraph');
+    const handleClick = (event) =>{
+        location.href="averageDetail.html";
+        localStorage.clear();
+        localStorage.setItem("variable","Satisfaction");
+        localStorage.setItem("variableText","Satisfacción");
+    }
+    graphSatisfaction.addEventListener("click",handleClick);
 });
 
 db.collection("answers").where("category", "==", "Activities").get().then((querySnapshot) => {
@@ -86,7 +105,15 @@ db.collection("answers").where("category", "==", "Activities").get().then((query
         resultFinalSatisfaction = parseFloat(sumSatisfaction / averageSatisfaction.length).toFixed(1); 
     });
     let text = 'La satisfacción con las actividades en clase en promedio es de:';
-    cardAverage('Actividades',text, resultFinalSatisfaction);
+    cardAverage("ActivitiesGraph",'Actividades',text, resultFinalSatisfaction);
+    const graphActivities = document.getElementById('ActivitiesGraph');
+    const handleClick = (event) =>{
+        location.href="averageDetail.html";
+        localStorage.clear();
+        localStorage.setItem("variable","Activities");
+        localStorage.setItem("variableText","Actividades en clase");
+    }
+    graphActivities.addEventListener("click",handleClick);
 });
 
 db.collection("answers").where("category", "==", "Jobs").get().then((querySnapshot) => {
@@ -107,9 +134,16 @@ db.collection("answers").where("category", "==", "Jobs").get().then((querySnapsh
         resultFinalSatisfaction = parseFloat(sumSatisfaction / averageSatisfaction.length).toFixed(1); 
     });
     let text = 'La satisfacción con los trabajos y entregas en promedio es de:';
-    cardAverage('Trabajos',text, resultFinalSatisfaction);
+    cardAverage("JobsGraph",'Trabajos',text, resultFinalSatisfaction);
+    const graphJobs = document.getElementById('JobsGraph');
+    const handleClick = (event) =>{
+        location.href="averageDetail.html";
+        localStorage.clear();
+        localStorage.setItem("variable","Jobs");
+        localStorage.setItem("variableText","Trabajos y entregas");
+    }
+    graphJobs.addEventListener("click",handleClick);
 });
-
 
 db.collection("answers").where("category", "==", "Metodology").get().then((querySnapshot) => {
     var dataAnswers = [];
@@ -129,7 +163,14 @@ db.collection("answers").where("category", "==", "Metodology").get().then((query
         resultFinalSatisfaction = parseFloat(sumSatisfaction / averageSatisfaction.length).toFixed(1); 
     });
     let text = 'La satisfacción con la metodología utilizada en clase en promedio es de:';
-    cardAverage('Metodología',text, resultFinalSatisfaction);
+    cardAverage("metodologyGraph",'Metodología',text, resultFinalSatisfaction);
+    const graphMetodology = document.getElementById('metodologyGraph');
+    const handleClick = (event) =>{
+        location.href="averageDetail.html";
+        localStorage.clear();
+        localStorage.setItem("variable","Metodology");
+        localStorage.setItem("variableText","Metodología");
+    }
+    graphMetodology.addEventListener("click",handleClick);
 });
-
 

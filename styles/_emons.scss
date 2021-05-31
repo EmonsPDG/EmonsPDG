@@ -43,5 +43,38 @@
                 }
             }
         }
+
+        &__title{
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            text-align: center;
+
+            &Status{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+
+                a {
+                    font-weight: 600;
+                    text-decoration: none;
+                    color: $color-darkGray;
+
+                    &:hover{
+                        text-decoration: underline;
+                        transition: text-decoration 1s;
+                    }
+                }
+
+                img {
+                    margin-left: 10px;
+                }
+
+                &Var{
+                    margin-left: 10px;
+                    font-weight: 400;
+                }
+            }
+        }
     }
 }

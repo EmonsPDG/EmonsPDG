@@ -25,9 +25,9 @@
                     <div class="navList__adminOptions">
                         <ul>
                             <a href="index.html"><li>Inicio</li></a>
-                            <a class="navList__adminOptions navList__adminOptions--selected" href="followGroup.html"><li>Seguimiento grupal</li></a>
+                            <a href="followGroup.html"><li>Seguimiento grupal</li></a>
                             <a href="followIndividual.html"><li>Seguimiento individual</li></a>
-                            <a href="feedback.html"><li>Retroalimentaciones</li></a>
+                            <a class="navList__adminOptions navList__adminOptions--selected" href="feedback.html"><li>Retroalimentaciones</li></a>
                         </ul>
                     </div>
                 </div>
@@ -50,46 +50,30 @@
                     <img class="emonsContent__infoBarProfilePhoto" src="./resources/photoProfile.png" alt="">
                 </div>
             </div>
-            <div class="emonsContent__groupGraphs">
-                <div class="emonsContent__groupGraphsSatisfaction">
-                    <p>Selecciona las variables que deseas mostrar y comparar en la grafica:</p>
-                    <div class="emonsContent__groupGraphsSatisfactionCheckboxes">
-                        <div class="icheckbox inputRadio inputRadioEmotional">
-                            <input type="checkbox" name="iCheck" id="emotional">
-                            <label for="emotional">Emocional</label>
-                        </div>
-                        <div class="icheckbox inputRadio inputRadioSatisfation">
-                            <input type="checkbox" name="iCheck" id="satisfation">
-                            <label for="satisfation">Satisfacción grupal</label>
-                        </div>
-                        <div class="icheckbox inputRadio inputRadioActivities">
-                            <input type="checkbox" name="iCheck" id="activities">
-                            <label for="activities">Actividades en clase</label>
-                        </div>
-                        <div class="icheckbox inputRadio inputRadioJobs">
-                            <input type="checkbox" name="iCheck" id="jobs">
-                            <label for="jobs">Trabajos y entregas</label>
-                        </div>
-                        <div class="icheckbox inputRadio inputRadioMetodolody">
-                            <input type="checkbox" name="iCheck" id="metodology">
-                            <label for="metodology">Metodología</label>
+            <div class="feedback__title">
+                <p>Retroalimentaciones</p>
+            </div>
+            <div class="feedback__list">
+                <!-- <div class="feedback__listItem">
+                    <p>Esta semana</p>
+                    <div class="feedback__listItemCard">
+                        <img src="/resources/emojiHappy.svg" alt="">
+                        <div class="feedback__listItemCardText">
+                            <h3>Metodología</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id justo a ante semper rhoncus in vel libero. Pellentesque pulvinar ullamcorper libero sit amet accumsan. Etiam sagittis sagittis pulvinar. Ut non risus placerat, ultrices leo nec, sollicitudin tortor. Aliquam scelerisque mi a diam egestas mollis.</p>
                         </div>
                     </div>
-                    <div class="emonsContent__groupGraphsSatisfactionContainer"></div>
-                    <!-- <canvas class="emonsContent__groupGraphsSatisfactionData" id="satisfactionGraphGroup"></canvas> -->
-                    <p>Promedio al día por variable</p>
-                    <div class="emonsContent__groupGraphsSatisfactionCardAverages"></div>
-                </div>
+                </div> -->
+            </div>
         </div>
     </div>
     
+
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-analytics.js"></script>
     <script src="./scripts/firebase.js"></script>
-    <script src="./scripts/followGroup.js"></script>
-    <script src="./scripts/graphsAverages.js"></script>
-
+    <script src="./scripts/feedback.js"></script>
 
 </body>
 </html>

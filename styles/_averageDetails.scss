@@ -18,6 +18,11 @@
             flex-wrap: wrap;
             max-width: 1600px;
 
+            p{
+                font-size: 18px;
+                font-weight: 600;
+            }
+
             &Card{
                 display: flex;
                 flex-direction: row;
@@ -56,6 +61,11 @@
         &List{
             display: flex;
             flex-direction: column;
+
+            p{
+                font-size: 18px;
+                font-weight: 600;
+            }
 
             &Card{
                 display: flex;

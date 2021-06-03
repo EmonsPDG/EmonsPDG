@@ -727,6 +727,11 @@ body {
   max-width: 1600px;
 }
 
+.averageDetail__ratingsList p {
+  font-size: 18px;
+  font-weight: 600;
+}
+
 .averageDetail__ratingsListCard {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -778,6 +783,11 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.averageDetail__feedbacksList p {
+  font-size: 18px;
+  font-weight: 600;
 }
 
 .averageDetail__feedbacksListCard {

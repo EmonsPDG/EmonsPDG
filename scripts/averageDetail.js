@@ -65,6 +65,12 @@ const createCardRating = (id,text) => {
 db.collection("feedbacks").where("category","==",dbSearch).onSnapshot((querySnapshot) => {
     feedbackList.textContent = ' ';
 
+    if(querySnapshot.empty){
+        let feedbackEmptyAlert = document.createElement('p');
+        feedbackEmptyAlert.innerHTML= '¡Aún no tienes retroalimentaciones en esta categoría!'
+        feedbackList.appendChild(feedbackEmptyAlert);
+    }
+
     querySnapshot.forEach((doc) => {
         createCardFeedback(doc.id,doc.data().category,doc.data().feedback);    
     });
@@ -74,6 +80,11 @@ db.collection("feedbacks").where("category","==",dbSearch).onSnapshot((querySnap
 db.collection("answers").where("category","==",dbSearch).onSnapshot((querySnapshot) => {
     ratingList.textContent = ' ';
 
+    if(querySnapshot.empty){
+        let feedbackEmptyAlert = document.createElement('p');
+        feedbackEmptyAlert.innerHTML= '¡Aún no tienes retroalimentaciones en esta categoría!'
+        ratingList.appendChild(feedbackEmptyAlert);
+    }
     querySnapshot.forEach((doc) => {
         createCardRating(doc.id,doc.data().result);
     });

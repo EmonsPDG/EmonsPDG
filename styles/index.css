@@ -644,6 +644,10 @@ body {
           order: 0;
 }
 
+.feedback__listItem--hidden {
+  display: none;
+}
+
 .feedback__listItemCard {
   -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;

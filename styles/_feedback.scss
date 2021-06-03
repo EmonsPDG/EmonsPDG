@@ -20,6 +20,10 @@
                 order: 0;
             }
             
+            &--hidden{
+                display: none;
+            }
+            
             &Card{
                 order: 1;
                 display: flex;

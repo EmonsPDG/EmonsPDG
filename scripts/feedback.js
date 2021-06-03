@@ -1,10 +1,11 @@
 let feedbackList = document.querySelector('.feedback__list');
 let startSemester = '';
-const cardFeedback = (id,title,text,date) => {
+const createCardFeedback = (id,title,text,date) => {
     indexWeek = parseInt(restaFechas(startSemester,date)/7);
     if(indexWeek <= 0) {
         indexWeek = 1;
     }
+
     let feedbackListItem = document.querySelector('#listItem'+indexWeek);
 
     let feedbackCard = document.createElement('div');
@@ -59,8 +60,14 @@ let arrayWeeks = [];
 for (let i = 0; i < 17; i++) {
     arrayWeeks.push(new Array(0));
 }
+
 db.collection("feedbacks").onSnapshot((querySnapshot) => {
     let feedbackAnswers = [];
+
+    //Codigo para vaciar el contenedor principal al momento en que se debe crear una nueva tarjeta para que no se
+    //vuelvan a pintar las mismas de antes
+    let feedbackListLastContainer = document.querySelector('.feedback__list');
+    feedbackListLastContainer.textContent = ' ';
 
     querySnapshot.forEach((doc) => {
         feedbackAnswers.push(doc.data());
@@ -81,13 +88,20 @@ db.collection("feedbacks").onSnapshot((querySnapshot) => {
             }
             // console.log('Semana de respuesta: '+ indexWeek);
             arrayWeeks[indexWeek].push(feedback);
-            cardFeedback(feedback.id,feedback.category,feedback.feedback,feedback.date);
+            createCardFeedback(feedback.id,feedback.category,feedback.feedback,feedback.date);
+            let feedbackListContainer = document.querySelectorAll('.feedback__listItem');
+            feedbackListContainer.forEach((feedbackContainer)=>{
+                if(feedbackContainer.childNodes.length > 1){
+                    feedbackContainer.classList.remove('feedback__listItem--hidden');
+                }
+            });
         });
     });
 
     arrayWeeks.forEach((week,index) => {
         let feedbackListItem = document.createElement('div');
         feedbackListItem.classList.add('feedback__listItem');
+        feedbackListItem.classList.add('feedback__listItem--hidden');
         feedbackListItem.setAttribute('id','listItem'+index);
 
         let feedbackListItemWeek = document.createElement('p');

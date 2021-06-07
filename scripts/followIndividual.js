@@ -20,7 +20,8 @@ db.collection("students").onSnapshot((querySnapshot) => {
                 idc: doc.data().id,
                 sat: doc.data().result,
                 surveys: doc.data().surveys,
-                lastUpdate: doc.data().lastUpdate
+                lastUpdate: doc.data().lastUpdate,
+                requestName: "Click para solicitar nombre"
             }
         )
     });
@@ -41,10 +42,16 @@ db.collection("students").onSnapshot((querySnapshot) => {
             {title:"Satisfacción", field:"sat",hozAlign:"center"},
             {title:"Encuestas realizadas", field:"surveys", hozAlign:"center"},
             {title:"Última actualización", field:"lastUpdate", hozAlign:"center"},
+            {title:"Acción",field:"requestName",hozAlign:"center", width: 200, cellClick:function(e, cell){
+                //e - the click event object
+                //cell - cell component
+                alert("Se solicitó al estudiante permiso para conocer su nombre exitosamente");
+                },
+            }
         ],
-        rowClick:function(e, row){ //trigger an alert message when the row is clicked
-            alert("Row " + row.getData().id + " Clicked!!!!");
-        },
+        // rowClick:function(e, row){ //trigger an alert message when the row is clicked
+        //     alert("Row " + row.getData().id + " Clicked!!!!");
+        // },
     });
 
 });

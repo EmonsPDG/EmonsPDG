@@ -612,6 +612,104 @@ body {
   margin-left: 8px;
 }
 
+.followIndividual__title p {
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 0;
+}
+
+.followIndividual__students {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.followIndividual__students p:nth-child(2) {
+  margin-left: 10px;
+  font-weight: 600;
+}
+
+.followIndividual__table {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.followIndividual__tableHeader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #D2D2D2;
+  padding: 0px 15px;
+}
+
+.followIndividual__tableHeader p {
+  font-weight: 600;
+  margin: 15px 0px 0px 0px;
+}
+
+.followIndividual__tableList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.followIndividual__tableListCard {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 10px 0px;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+  border-radius: 0px 0px 10px 10px;
+  padding: 10px 15px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.followIndividual__tableListCard p {
+  margin: 0;
+  width: 100px;
+  text-align: center;
+}
+
+.followIndividual__tableListCard img {
+  width: 4%;
+}
+
+.followIndividual__tableListCard button {
+  width: 110px;
+}
+
 .feedback__title p {
   font-weight: 600;
   font-size: 18px;

@@ -21,7 +21,14 @@
                 &Checkboxes{
                     display: flex;
                     flex-direction: row;
-                    justify-content: space-between;
+
+                    & div{
+                        margin-left: 20px;
+
+                        &:nth-child(1){
+                            margin-left: 0;
+                        }
+                    }
                 }
 
                 &CardAverages{

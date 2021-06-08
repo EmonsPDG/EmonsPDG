@@ -578,9 +578,14 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+}
+
+.emonsContent__groupGraphsSatisfactionCheckboxes div {
+  margin-left: 20px;
+}
+
+.emonsContent__groupGraphsSatisfactionCheckboxes div:nth-child(1) {
+  margin-left: 0;
 }
 
 .emonsContent__groupGraphsSatisfactionCardAverages {

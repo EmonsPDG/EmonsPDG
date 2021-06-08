@@ -1,6 +1,6 @@
 let feedbackList = document.querySelector('.feedback__list');
 let startSemester = '';
-const createCardFeedback = (id,title,text,date) => {
+const createCardFeedback = (id,title,text,date,emoji) => {
     indexWeek = parseInt(restaFechas(startSemester,date)/7);
     if(indexWeek <= 0) {
         indexWeek = 1;
@@ -10,7 +10,17 @@ const createCardFeedback = (id,title,text,date) => {
 
     let feedbackCard = document.createElement('div');
     let feedbackCardImg = document.createElement('img');
-    feedbackCardImg.setAttribute('src','./resources/emojiHappy.svg');
+    switch (emoji) {
+        case 'happy':
+            feedbackCardImg.setAttribute('src','./resources/emojiHappy.svg');
+            break;
+        case 'bad':
+            feedbackCardImg.setAttribute('src','./resources/emojiBad.svg');
+            break;
+        default:
+            feedbackCardImg.setAttribute('src','./resources/emojiHappy.svg');
+            break;
+    }
     let feedbackCardText = document.createElement('div');
     let feedbackCardTextH3 = document.createElement('h3');
     switch (title) {
@@ -88,7 +98,7 @@ db.collection("feedbacks").onSnapshot((querySnapshot) => {
             }
             // console.log('Semana de respuesta: '+ indexWeek);
             arrayWeeks[indexWeek].push(feedback);
-            createCardFeedback(feedback.id,feedback.category,feedback.feedback,feedback.date);
+            createCardFeedback(feedback.id,feedback.category,feedback.feedback,feedback.date,feedback.emoji);
             let feedbackListContainer = document.querySelectorAll('.feedback__listItem');
             feedbackListContainer.forEach((feedbackContainer)=>{
                 if(feedbackContainer.childNodes.length > 1){

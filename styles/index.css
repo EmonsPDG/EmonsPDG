@@ -794,6 +794,10 @@ body {
   border: 1px solid #FF5151;
 }
 
+.feedback__listItemCard--good {
+  border: 1px solid #92DD6F;
+}
+
 .averageDetail {
   display: -webkit-box;
   display: -ms-flexbox;

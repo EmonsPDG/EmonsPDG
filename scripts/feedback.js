@@ -13,6 +13,7 @@ const createCardFeedback = (id,title,text,date,emoji) => {
     switch (emoji) {
         case 'happy':
             feedbackCardImg.setAttribute('src','./resources/emojiHappy.svg');
+            feedbackCard.classList.add('feedback__listItemCard--good');
             break;
         case 'bad':
             feedbackCardImg.setAttribute('src','./resources/emojiBad.svg');
@@ -20,6 +21,7 @@ const createCardFeedback = (id,title,text,date,emoji) => {
             break;
         default:
             feedbackCardImg.setAttribute('src','./resources/emojiHappy.svg');
+            feedbackCard.classList.add('feedback__listItemCard--good');
             break;
     }
     let feedbackCardText = document.createElement('div');

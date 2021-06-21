@@ -790,6 +790,10 @@ body {
   margin-top: 5px;
 }
 
+.feedback__listItemCard--alert {
+  border: 1px solid #FF5151;
+}
+
 .averageDetail {
   display: -webkit-box;
   display: -ms-flexbox;

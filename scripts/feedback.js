@@ -16,6 +16,7 @@ const createCardFeedback = (id,title,text,date,emoji) => {
             break;
         case 'bad':
             feedbackCardImg.setAttribute('src','./resources/emojiBad.svg');
+            feedbackCard.classList.add('feedback__listItemCard--alert');
             break;
         default:
             feedbackCardImg.setAttribute('src','./resources/emojiHappy.svg');

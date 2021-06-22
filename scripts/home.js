@@ -123,4 +123,10 @@ db.collection("answers").get().then((querySnapshot) => {
     });
 });
 
+const btn = document.querySelector('.checkStudent');
+
+btn.addEventListener('click',() =>{
+    location.href ="/feedback.html";
+});
+
     

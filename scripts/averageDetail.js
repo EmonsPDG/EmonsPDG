@@ -7,7 +7,7 @@ const dbSearch = localStorage.getItem('variable');
 const feedbackList = document.querySelector('.averageDetail__feedbacksList');
 const ratingList = document.querySelector('.averageDetail__ratingsList');
 
-const createCardFeedback = (id,title,text) => {
+const createCardFeedback = (id,title,text,emoji) => {
 
     let feedbackCard = document.createElement('div');
     let feedbackCardImg = document.createElement('img');
@@ -31,6 +31,20 @@ const createCardFeedback = (id,title,text) => {
             feedbackCardTextH3.innerHTML = 'Satisfacción general';
             break;
     }
+    switch (emoji) {
+        case 'happy':
+            feedbackCardImg.setAttribute('src','./resources/emojiHappy.svg');
+            feedbackCard.classList.add('feedback__listItemCard--good');
+            break;
+        case 'bad':
+            feedbackCardImg.setAttribute('src','./resources/emojiBad.svg');
+            feedbackCard.classList.add('feedback__listItemCard--alert');
+            break;
+        default:
+            feedbackCardImg.setAttribute('src','./resources/emojiHappy.svg');
+            feedbackCard.classList.add('feedback__listItemCard--good');
+            break;
+    }
     let feedbackCardTextP = document.createElement('p');
     feedbackCardTextP.innerHTML = text;
 
@@ -46,10 +60,23 @@ const createCardFeedback = (id,title,text) => {
     feedbackList.appendChild(feedbackCard);
 }
 
-const createCardRating = (id,text) => {
+const createCardRating = (id,text,emoji) => {
     let ratingCard = document.createElement('div');
     let ratingCardImg = document.createElement('img');
-    ratingCardImg.setAttribute('src','./resources/emojiHappy.svg');
+    switch (emoji) {
+        case 'happy':
+            ratingCardImg.setAttribute('src','./resources/emojiHappy.svg');
+            ratingCard.classList.add('feedback__listItemCard--good');
+            break;
+        case 'bad':
+            ratingCardImg.setAttribute('src','./resources/emojiBad.svg');
+            ratingCard.classList.add('feedback__listItemCard--alert');
+            break;
+        default:
+            ratingCardImg.setAttribute('src','./resources/emojiHappy.svg');
+            ratingCard.classList.add('feedback__listItemCard--good');
+            break;
+    }
     let ratingCardTextP = document.createElement('p');
     ratingCardTextP.innerHTML = text;
 
@@ -72,7 +99,7 @@ db.collection("feedbacks").where("category","==",dbSearch).onSnapshot((querySnap
     }
 
     querySnapshot.forEach((doc) => {
-        createCardFeedback(doc.id,doc.data().category,doc.data().feedback);    
+        createCardFeedback(doc.id,doc.data().category,doc.data().feedback,doc.data().emoji);    
     });
 });
 
@@ -86,6 +113,6 @@ db.collection("answers").where("category","==",dbSearch).onSnapshot((querySnapsh
         ratingList.appendChild(feedbackEmptyAlert);
     }
     querySnapshot.forEach((doc) => {
-        createCardRating(doc.id,doc.data().result);
+        createCardRating(doc.id,doc.data().result,doc.data().emoji);
     });
 });

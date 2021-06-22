@@ -489,7 +489,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 80%;
+  width: 100%;
 }
 
 .emonsContent__homeNewsNotificationsTitle {
@@ -514,6 +514,24 @@ body {
           align-items: center;
   padding: 15px;
   margin-bottom: 10px;
+  border: 1px solid #FF5151;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.emonsContent__homeNewsNotificationsBlockStart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 20px;
 }
 
 .emonsContent__homeNewsNotificationsBlockText {
